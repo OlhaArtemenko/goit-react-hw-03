@@ -1,8 +1,17 @@
-export default function SearchBox() {
+export default function SearchBox({ handleSearch }) {
+  const handleChange = (event) => {
+    const query = event.target.value;
+    handleSearch(query);
+  };
+
   return (
-    <form>
-      <input type="text" name="search" />
-      <button type="submit">Search</button>
-    </form>
+    <div>
+      <input
+        type="text"
+        name="search"
+        placeholder="Search contacts"
+        onChange={handleChange}
+      />
+    </div>
   );
 }
