@@ -31,14 +31,30 @@ export default function ContactForm({ onAdd }) {
         resetForm();
       }}
     >
-      <Form>
-        <label htmlFor={`${fieldId}-name`}>Name</label>
-        <Field type="text" name="name" id={`${fieldId}-name`} />
+      <Form className={css.container}>
+        <label className={css.label} htmlFor={`${fieldId}-name`}>
+          Name
+        </label>
+        <Field
+          className={css.input}
+          type="text"
+          name="name"
+          id={`${fieldId}-name`}
+        />
         <ErrorMessage className={css.error} name="name" component="span" />
-        <label htmlFor={`${fieldId}-number`}>Number</label>
-        <Field type="tel" name="number" id={`${fieldId}-number`} />
+        <label className={css.label} htmlFor={`${fieldId}-number`}>
+          Number
+        </label>
+        <Field
+          className={css.input}
+          type="tel"
+          name="number"
+          id={`${fieldId}-number`}
+        />
         <ErrorMessage className={css.error} name="number" component="span" />
-        <button type="submit">Add contact</button>
+        <button className={css.btn} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

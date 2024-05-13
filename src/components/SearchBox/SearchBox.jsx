@@ -1,3 +1,5 @@
+import css from "./SearchBox.module.css";
+
 export default function SearchBox({ handleSearch }) {
   const handleChange = (event) => {
     const query = event.target.value;
@@ -7,6 +9,7 @@ export default function SearchBox({ handleSearch }) {
   return (
     <div>
       <input
+        className={css.input}
         type="text"
         name="search"
         placeholder="Search contacts"
